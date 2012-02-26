@@ -6,16 +6,27 @@ module Xcode
       
       class Rename
         
+        # Initialize renamer with the oldname and the new name as arguments
         def initialize
           @from, @to = ARGV
           @files, @allFiles = [], []
           check_arguments
         end
         
+        # Check weather both arguments are given, otherways we can't do nothing
         def check_arguments
-          raise "-> Usage: xcodeprojectrenamer oldname newname" if @from.nil? or @to.nil?
+          if @from.nil? or @to.nil?
+            puts ""
+            puts "Sorry, missing the names!"
+            puts "-> Usage: xcodeprojectrenamer oldname newname"
+            puts ""
+            exit 1
+          end
         end
-
+        
+        # Start the actual renaming consisting of two tasks:
+        # * Rename the files in the directories
+        # * Rename the files contents to reflect the new files names
         def rename!
           puts ""
           puts "Renaming from #{@from} to #{@to}"

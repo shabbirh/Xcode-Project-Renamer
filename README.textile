@@ -1,0 +1,19 @@
+h1. XCodeProjectRenamer
+
+Use this gem to deep rename any XCode project.
+
+h2. Install
+
+@gem install xcode-project-renamer@
+
+h2. Usage
+
+# Navigate into you project, right where you @*.xcodeproj@ file is located
+# @xcode-project-renamer oldname newname@
+
+h2. Example
+
+You are having a project called @FaceTime@.
+
+# Navigate to where the @FaceTime@ directory and the @FaceTime.xcodeproj@ is located.
+# @xcode-project-renamer FaceTime Messages@
