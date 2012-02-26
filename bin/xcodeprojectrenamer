@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'xcode-project-renamer'
+
+Xcode::Project::Renamer::Rename.new.rename!
